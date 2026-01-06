@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoxPass | Game Library</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Special style for the clickable game links */
+        .game-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        /* Hover effect for the title when linked */
+        .game-link h4:hover {
+            color: #9bf00b; /* Neon Green */
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index2.html" style="text-decoration:none; color:white;">
+                    <i class="fa-solid fa-gamepad"></i> NOX<span>PASS</span>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index2.html">Home</a></li>
+                    <li><a href="games2.html">Games</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-menu">
+                <div class="user-info" onclick="toggleDropdown()">
+                    <i class="fa-solid fa-circle-user nav-avatar"></i>
+                    <span>Danial</span>
+                    <span class="tier-tag">FREE</span> <i class="fa-solid fa-caret-down" style="margin-left: 5px;"></i>
+                </div>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="myprofile.html"><i class="fa-solid fa-user-gear"></i> My Profile</a>
+                    <a href="index.html" class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="games-hero">
+        <div class="container">
+            <h1>BROWSE THE LIBRARY</h1>
+            <p>Explore over 200+ high-quality PC games.</p>
+            
+            <div class="library-controls">
+                <div class="game-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search by title...">
+                </div>
+
+                <div class="game-filter">
+                    <select>
+                        <option value="all">All Genres</option>
+                        <option value="action">Action</option>
+                        <option value="rpg">RPG</option>
+                        <option value="strategy">Strategy</option>
+                        <option value="sports">Sports</option>
+                        <option value="horror">Horror</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="library-section">
+        <div class="container">
+            <div class="games-grid">
+                
+                <div class="game-card">
+                    <a href="game1overview.html" class="game-link">
+                        <img src="images/game1.jpg" alt="Cyberpunk 2077" class="game-thumb">
+                    </a>
+                    <div class="game-info">
+                        <a href="game1overview.html" class="game-link">
+                            <h4>Cyberpunk 2077</h4>
+                        </a>
+                        <div class="tags">
+                            <span>Action</span>
+                            <span>RPG</span>
+                        </div>
+                        <button class="download-btn" onclick="checkSubscribtion()">
+                            <i class="fa-solid fa-download"></i> INSTALL
+                        </button>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="images/game2.jpg" alt="Street Fighter 6" class="game-thumb">
+                    <div class="game-info">
+                        <h4>Street Fighter™ 6</h4>
+                        <div class="tags">
+                            <span>Fighting</span>
+                            <span>PvP</span>
+                        </div>
+                        <button class="download-btn" onclick="checkSubscribtion()">
+                            <i class="fa-solid fa-download"></i> INSTALL
+                        </button>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="images/game3.jpg" alt="Monster Hunter Wilds" class="game-thumb">
+                    <div class="game-info">
+                        <h4>Monster Hunter Wilds</h4>
+                        <div class="tags">
+                            <span>Co-op</span>
+                            <span>RPG</span>
+                        </div>
+                        <button class="download-btn" onclick="checkSubscribtion()">
+                            <i class="fa-solid fa-download"></i> INSTALL
+                        </button>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="images/game4.jpg" alt="HELLDIVERS 2" class="game-thumb">
+                    <div class="game-info">
+                        <h4>HELLDIVERS™ 2</h4>
+                        <div class="tags">
+                            <span>Shooter</span>
+                            <span>Sci-fi</span>
+                        </div>
+                        <button class="download-btn" onclick="checkSubscribtion()">
+                            <i class="fa-solid fa-download"></i> INSTALL
+                        </button>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="images/game5.jpg" alt="ARC Raiders" class="game-thumb">
+                    <div class="game-info">
+                        <h4>ARC Raiders</h4>
+                        <div class="tags">
+                            <span>Extraction</span>
+                            <span>Sci-fi</span>
+                        </div>
+                        <button class="download-btn" onclick="checkSubscribtion()">
+                            <i class="fa-solid fa-download"></i> INSTALL
+                        </button>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="images/game6.jpg" alt="Ready or Not" class="game-thumb">
+                    <div class="game-info">
+                        <h4>Ready or Not</h4>
+                        <div class="tags">
+                            <span>Tactical</span>
+                            <span>FPS</span>
+                        </div>
+                        <button class="download-btn" onclick="checkSubscribtion()">
+                            <i class="fa-solid fa-download"></i> INSTALL
+                        </button>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="images/game7.jpg" alt="Persona 5 Royal" class="game-thumb">
+                    <div class="game-info">
+                        <h4>Persona 5 Royal</h4>
+                        <div class="tags">
+                            <span>Story</span>
+                            <span>JPRG</span>
+                        </div>
+                        <button class="download-btn" onclick="checkSubscribtion()">
+                            <i class="fa-solid fa-download"></i> INSTALL
+                        </button>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="images/game8.jpg" alt="Elden Ring" class="game-thumb">
+                    <div class="game-info">
+                        <h4>Elden Ring</h4>
+                        <div class="tags">
+                            <span>Souls-like</span>
+                            <span>Story</span>
+                        </div>
+                        <button class="download-btn" onclick="checkSubscribtion()">
+                            <i class="fa-solid fa-download"></i> INSTALL
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pagination">
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn">Next &rarr;</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="support.html">Support</a>
+                <a href="contact.html">Contact DIZASS</a>
+            </div>
+            <p>&copy; 2025 NoxPass by DIZASS Group. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Dropdown Logic (Same as before)
+        function toggleDropdown() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+        window.onclick = function(event) {
+            if (!event.target.closest('.user-info')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+        
+        // Check Subscription before Download
+        function checkSubscribtion() {
+            alert("Please purchase a subscription to download games.");
+            window.location.href = "payment.html";
+        }
+    </script>
+
+</body>
+</html>

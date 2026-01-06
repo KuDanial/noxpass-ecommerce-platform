@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoxPass | Cyberpunk 2077</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration:none; color:white;">
+                    <i class="fa-solid fa-gamepad"></i> NOX<span>PASS</span>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="games.html" style="color: #fff;">Games</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="login.html" class="login-btn">Sign In</a>
+                <a href="index.html#plans" class="join-btn">JOIN NOW</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="game-header-section">
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="games.html">All Games</a> &gt; <a href="#">Action</a> &gt; <span>Cyberpunk 2077</span>
+            </div>
+            <h1>Cyberpunk 2077</h1>
+        </div>
+    </section>
+
+    <section class="game-details-section">
+        <div class="container game-layout">
+            
+            <div class="game-content-left">
+                <div class="media-player">
+                    <video id="gameVideo" class="main-media" poster="images/game1thumbnail.jpg">
+                        <source src="videos/game1trailer.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+
+                    <img id="mainImage" class="main-media" src="" style="display:none; object-fit: cover;">
+                    
+                    <div id="playBtn" class="play-overlay" onclick="playGameVideo()">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                </div>
+
+                <div class="screenshot-strip">
+                    <div class="ss-item" onclick="showVideo()">
+                        <div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:#000; color:#fff;">
+                            <i class="fa-solid fa-film"></i> </div>
+                    </div>
+
+                    <div class="ss-item"> 
+                        <img src="images/game1screenshot1.jpg" alt="Screenshot 1" style="width: 100%; height: 100%; object-fit: cover;" onclick="showImage(this.src)"> 
+                    </div>
+
+                    <div class="ss-item"> 
+                        <img src="images/game1screenshot2.jpg" alt="Screenshot 2" style="width: 100%; height: 100%; object-fit: cover;" onclick="showImage(this.src)"> 
+                    </div>
+
+                    <div class="ss-item"> 
+                        <img src="images/game1screenshot3.jpg" alt="Screenshot 3" style="width: 100%; height: 100%; object-fit: cover;" onclick="showImage(this.src)">
+                    </div>
+
+                    <div class="ss-item"> 
+                        <img src="images/game1screenshot4.jpg" alt="Screenshot 4" style="width: 100%; height: 100%; object-fit: cover;" onclick="showImage(this.src)"> 
+                    </div>
+                </div>
+
+                <div class="about-game">
+                    <h2>ABOUT THIS GAME</h2>
+                    <p>Cyberpunk 2077 is an open-world, action-adventure RPG set in the dark future of Night City — a dangerous megalopolis obsessed with power, glamor, and ceaseless body modification.</p>
+                    <p>You play as V, a mercenary outlaw going after a one-of-a-kind implant that is the key to immortality. You can customize your character’s cyberware, skillset and playstyle, and explore a vast city where the choices you make shape the story and the world around you.</p>
+                </div>
+
+                <div class="system-reqs">
+                    <h2>SYSTEM REQUIREMENTS</h2>
+                    <div class="req-grid">
+                        <div class="req-col">
+                            <strong>MINIMUM:</strong>
+                            <ul>
+                                <li>Requires a 64-bit processor and operating system</li>
+                                <li><b>OS:</b> 64-bit Windows 10</li>
+                                <li><b>Processor:</b> Intel Core i7-6700 or Ryzen 5 1600</li>
+                                <li><b>Memory:</b> 12 GB RAM</li>
+                                <li><b>Graphics:</b> GeForce GTX 1060 6GB or Radeon RX 580 8GB or Arc A380</li>
+                                <li><b>Storage:</b> 70 GB available space</li>
+                                <li><b>ADDITIONAL NOTES:</b> SSD required. Attention: In this game you will encounter a variety of visual effects that may provide seizures or loss of consciousness in a minority of people. If you or someone you know experiences any of the above symptoms while playing, stop and seek medical attention immediately.</li>
+                            </ul>
+                        </div>
+                        <div class="req-col">
+                            <strong>RECOMMENDED:</strong>
+                            <ul>
+                                <li>Requires a 64-bit processor and operating system</li>
+                                <li><b>OS:</b> 64-bit Windows 10</li>
+                                <li><b>Processor:</b> Intel Core i7-12700 or Ryzen 7 7800X3D</li>
+                                <li><b>Memory:</b> 16 GB RAM</li>
+                                <li><b>Graphics:</b> GeForce RTX 2060 SUPER or Radeon RX 5700 XT or Arc A770</li>
+                                <li><b>Storage:</b> 70 GB available space</li>
+                                <li><b>ADDITIONAL NOTES:</b> SSD required.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-sidebar">
+                <img src="images/game1banner.jpg" alt="Cover Art" class="sidebar-cover">
+                
+                <div class="game-meta-box">
+                    <p class="description-short">Become a cyberpunk, an urban mercenary equipped with cybernetic enhancements and build your legend on the streets of Night City.</p>
+                    
+                    <div class="meta-row">
+                        <span>REVIEWS:</span>
+                        <span style="color: #66c0f4;">Very Positive</span>
+                    </div>
+                    <div class="meta-row">
+                        <span>RELEASE DATE:</span>
+                        <span>10 Dec, 2020</span>
+                    </div>
+                    <div class="meta-row">
+                        <span>DEVELOPER:</span>
+                        <span style="color: #9bf00b;">CD PROJEKT RED</span>
+                    </div>
+                    <div class="meta-row">
+                        <span>PUBLISHER:</span>
+                        <span style="color: #9bf00b;">CD PROJEKT RED</span>
+                    </div>
+                </div>
+
+                <div class="action-box">
+                    <div class="pass-badge">INCLUDED WITH <span style="color:#fff; font-weight:800;">NOX</span>PASS</div>
+                    <p>Play this game and hundreds more with your monthly subscription.</p>
+                    <button class="install-btn-large" onclick="checkLogin()">
+                        <i class="fa-brands fa-windows"></i> INSTALL TO PC
+                    </button>
+                    <div class="divider">OR</div>
+                    <button class="buy-btn" onclick="checkLogin()">Buy for RM 219.00</button>
+                </div>
+
+                <div class="tags-cloud">
+                    <span>Cyberpunk</span>
+                    <span>Open World</span>
+                    <span>RPG</span>
+                    <span>Nudity</span>
+                    <span>Sci-fi</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="support.html">Support</a>
+                <a href="contact.html">Contact DIZASS</a>
+            </div>
+            <p>&copy; 2025 NoxPass by DIZASS Group. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Existing Login Check
+        function checkLogin() {
+            alert("You need to log in or purchase a subscription to perform this action.");
+            window.location.href = "login.html";
+        }
+
+        // Play Video Function
+        function playGameVideo() {
+            var video = document.getElementById("gameVideo");
+            var btn = document.getElementById("playBtn");
+
+            video.play();
+            video.controls = true; 
+            btn.style.display = "none";
+        }
+
+        // --- NEW: SHOW SCREENSHOT FUNCTION ---
+        function showImage(imageSrc) {
+            var video = document.getElementById("gameVideo");
+            var img = document.getElementById("mainImage");
+            var btn = document.getElementById("playBtn");
+
+            // 1. Pause and hide video
+            video.pause();
+            video.style.display = "none";
+            btn.style.display = "none"; // Hide play button
+
+            // 2. Show the image and set the source
+            img.src = imageSrc;
+            img.style.display = "block";
+        }
+
+        // --- NEW: SWITCH BACK TO VIDEO FUNCTION ---
+        function showVideo() {
+            var video = document.getElementById("gameVideo");
+            var img = document.getElementById("mainImage");
+            var btn = document.getElementById("playBtn");
+
+            // 1. Hide image
+            img.style.display = "none";
+
+            // 2. Show video and play button
+            video.style.display = "block";
+            video.load(); // Reset video to start
+            video.controls = false; // Remove controls until played
+            btn.style.display = "block"; // Bring back the big play button
+        }
+    </script>
+
+</body>
+</html>

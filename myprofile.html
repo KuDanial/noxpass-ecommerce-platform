@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoxPass | My Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index4.html" style="text-decoration:none; color:white;">
+                    <i class="fa-solid fa-gamepad"></i> NOX<span>PASS</span>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index4.html">Home</a></li>
+                    <li><a href="games4.html">Games</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-menu">
+                <div class="user-info" onclick="toggleDropdown()">
+                    <i class="fa-solid fa-circle-user nav-avatar"></i>
+                    <span>Danial</span>
+                    <span class="tier-tag ultimate-tag">ULTIMATE</span> <i class="fa-solid fa-caret-down" style="margin-left: 5px;"></i>
+                </div>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="myprofile.html"><i class="fa-solid fa-user-gear"></i> My Profile</a>
+                    <a href="index.html" class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="profile-section">
+        <div class="container profile-grid">
+            
+            <div class="profile-card user-details">
+                <div class="profile-header">
+                    <div class="avatar-large">
+                        <i class="fa-solid fa-user-astronaut"></i>
+                    </div>
+                    <h2>Tengku Ahmad Danial</h2>
+                    <p class="user-email">2025197383@student.uitm.edu.my</p>
+                    <div class="member-since">Member since Dec 2025</div>
+                </div>
+
+                <div class="profile-actions">
+                    <button class="action-btn"><i class="fa-solid fa-pen-to-square"></i> Edit Profile</button>
+                    <button class="action-btn outline"><i class="fa-solid fa-lock"></i> Change Password</button>
+                </div>
+            </div>
+
+            <div class="profile-content">
+                
+                <div class="content-card sub-status">
+                    <div class="card-header">
+                        <h3><i class="fa-solid fa-crown"></i> Current Subscription</h3>
+                        <span class="status-badge active">ACTIVE</span>
+                    </div>
+                    <div class="sub-details">
+                        <div class="plan-info">
+                            <h4>Ultimate Plan</h4>
+                            <p class="price">RM 29.99 / month</p>
+                        </div>
+                        <div class="billing-info">
+                            <p>Next Billing Date: <strong>07 Feb 2026</strong></p>
+                            <p>Payment Method: <strong>Maybank2u (FPX)</strong></p>
+                        </div>
+                    </div>
+                    <div class="sub-actions">
+                        <button class="manage-btn">Manage Subscription</button>
+                        <button class="cancel-btn">Cancel Plan</button>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <div class="card-header">
+                        <h3><i class="fa-solid fa-gamepad"></i> My Library</h3>
+                        <a href="games4.html" class="view-all-link">Browse All Games</a>
+                    </div>
+                    
+                    <div class="my-games-grid">
+                        <div class="mini-game-card">
+                            <img src="images/game1.jpg" alt="Cyberpunk 2077">
+                            <div class="mini-overlay">
+                                <button><i class="fa-solid fa-play"></i></button>
+                            </div>
+                        </div>
+                        <div class="mini-game-card">
+                            <img src="images/game2.jpg" alt="Street Fighter 6">
+                            <div class="mini-overlay">
+                                <button><i class="fa-solid fa-play"></i></button>
+                            </div>
+                        </div>
+                        <div class="mini-game-card">
+                            <img src="images/game8.jpg" alt="Elden Ring">
+                            <div class="mini-overlay">
+                                <button><i class="fa-solid fa-play"></i></button>
+                            </div>
+                        </div>
+                         <div class="mini-game-card add-new">
+                            <a href="games4.html">
+                                <i class="fa-solid fa-plus"></i>
+                                <span>Install New</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 NoxPass by DIZASS Group. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        /* When the user clicks on the button, toggle between hiding and showing the dropdown content */
+        function toggleDropdown() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        /* Close the dropdown if the user clicks outside of it */
+        window.onclick = function(event) {
+            if (!event.target.closest('.user-info')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

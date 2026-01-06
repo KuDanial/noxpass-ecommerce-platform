@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoxPass | Library (Ultimate)</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Special style for the clickable game links */
+        .game-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .game-link h4:hover {
+            color: #9bf00b;
+            cursor: pointer;
+        }
+
+        /* --- NEW: DOWNLOAD MODAL STYLES --- */
+        .modal-overlay {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: #1f1f1f;
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #9bf00b;
+            width: 400px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(155, 240, 11, 0.2);
+            position: relative;
+        }
+
+        .modal-content h3 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .progress-container {
+            width: 100%;
+            background-color: #333;
+            border-radius: 5px;
+            height: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background-color: #9bf00b;
+            transition: width 0.2s;
+        }
+
+        .status-text {
+            color: #ccc;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .close-btn {
+            background-color: #333;
+            color: #fff;
+            border: 1px solid #555;
+            padding: 8px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .close-btn:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index4.html" style="text-decoration:none; color:white;">
+                    <i class="fa-solid fa-gamepad"></i> NOX<span>PASS</span>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index4.html">Home</a></li>
+                    <li><a href="games4.html">Games</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-menu">
+                <div class="user-info" onclick="toggleDropdown()">
+                    <i class="fa-solid fa-circle-user nav-avatar"></i>
+                    <span>Danial</span>
+                    <span class="tier-tag ultimate-tag">ULTIMATE</span> 
+                    <i class="fa-solid fa-caret-down" style="margin-left: 5px;"></i>
+                </div>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="myprofile.html"><i class="fa-solid fa-user-gear"></i> My Profile</a>
+                    <a href="index.html" class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="games-hero">
+        <div class="container">
+            <h1>YOUR LIBRARY (ULTIMATE)</h1>
+            <p>You have access to all 200+ games. Install and play freely.</p>
+            
+            <div class="library-controls">
+                <div class="game-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search by title...">
+                </div>
+                <div class="game-filter">
+                    <select>
+                        <option value="all">All Genres</option>
+                        <option value="action">Action</option>
+                        <option value="rpg">RPG</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="downloadOverlay" class="modal-overlay">
+        <div class="modal-content">
+            <h3><i class="fa-solid fa-download"></i> Installing...</h3>
+            <p id="gameTitleTarget" style="color: #9bf00b; font-weight: bold; margin-bottom: 10px;">Cyberpunk 2077</p>
+            
+            <div class="progress-container">
+                <div id="dlBar" class="progress-bar"></div>
+            </div>
+            
+            <p id="dlStatus" class="status-text">Allocating space...</p>
+            
+            <button id="finishBtn" class="close-btn" onclick="closeDownload()" style="display: none;">LAUNCH GAME</button>
+        </div>
+    </div>
+
+    <section class="library-section">
+        <div class="container">
+            <div class="games-grid">
+                
+                <div class="game-card">
+                    <a href="game1overview.html" class="game-link">
+                        <img src="images/game1.jpg" alt="Cyberpunk 2077" class="game-thumb">
+                    </a>
+                    <div class="game-info">
+                        <a href="game1overview.html" class="game-link">
+                            <h4>Cyberpunk 2077</h4>
+                        </a>
+                        <div class="tags"><span>Action</span><span>RPG</span></div>
+                        <button class="download-btn" onclick="startDownload('Cyberpunk 2077')">
+                            <i class="fa-solid fa-download"></i> INSTALL
+                        </button>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="images/game2.jpg" alt="Street Fighter 6" class="game-thumb">
+                    <div class="game-info">
+                        <h4>Street Fighter™ 6</h4>
+                        <div class="tags"><span>Fighting</span><span>PvP</span></div>
+                        <button class="download-btn" onclick="startDownload('Street Fighter 6')">
+                            <i class="fa-solid fa-download"></i> INSTALL
+                        </button>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="images/game3.jpg" alt="Monster Hunter Wilds" class="game-thumb">
+                    <div class="game-info">
+                        <h4>Monster Hunter Wilds</h4>
+                        <div class="tags"><span>Co-op</span><span>RPG</span></div>
+                        <button class="download-btn" onclick="startDownload('Monster Hunter Wilds')">
+                            <i class="fa-solid fa-download"></i> INSTALL
+                        </button>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="images/game4.jpg" alt="HELLDIVERS 2" class="game-thumb">
+                    <div class="game-info">
+                        <h4>HELLDIVERS™ 2</h4>
+                        <div class="tags"><span>Shooter</span><span>Sci-fi</span></div>
+                        <button class="download-btn" onclick="startDownload('HELLDIVERS 2')">
+                            <i class="fa-solid fa-download"></i> INSTALL
+                        </button>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="images/game5.jpg" alt="ARC Raiders" class="game-thumb">
+                    <div class="game-info">
+                        <h4>ARC Raiders</h4>
+                        <div class="tags"><span>Extraction</span><span>Sci-fi</span></div>
+                        <button class="download-btn" onclick="startDownload('ARC Raiders')">
+                            <i class="fa-solid fa-download"></i> INSTALL
+                        </button>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="images/game6.jpg" alt="Ready or Not" class="game-thumb">
+                    <div class="game-info">
+                        <h4>Ready or Not</h4>
+                        <div class="tags"><span>Tactical</span><span>FPS</span></div>
+                        <button class="download-btn" onclick="startDownload('Ready or Not')">
+                            <i class="fa-solid fa-download"></i> INSTALL
+                        </button>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="images/game7.jpg" alt="Persona 5 Royal" class="game-thumb">
+                    <div class="game-info">
+                        <h4>Persona 5 Royal</h4>
+                        <div class="tags"><span>Story</span><span>JRPG</span></div>
+                        <button class="download-btn" onclick="startDownload('Persona 5 Royal')">
+                            <i class="fa-solid fa-download"></i> INSTALL
+                        </button>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="images/game8.jpg" alt="Elden Ring" class="game-thumb">
+                    <div class="game-info">
+                        <h4>Elden Ring</h4>
+                        <div class="tags"><span>Souls-like</span><span>Story</span></div>
+                        <button class="download-btn" onclick="startDownload('Elden Ring')">
+                            <i class="fa-solid fa-download"></i> INSTALL
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="support.html">Support</a>
+                <a href="contact.html">Contact DIZASS</a>
+            </div>
+            <p>&copy; 2025 NoxPass by DIZASS Group. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Dropdown Logic (Same as before)
+        function toggleDropdown() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+        window.onclick = function(event) {
+            if (!event.target.closest('.user-info')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+        // --- DOWNLOAD SIMULATION ---
+        function startDownload(gameName) {
+            // 1. Show Overlay
+            const overlay = document.getElementById('downloadOverlay');
+            const title = document.getElementById('gameTitleTarget');
+            const bar = document.getElementById('dlBar');
+            const status = document.getElementById('dlStatus');
+            const btn = document.getElementById('finishBtn');
+            
+            overlay.style.display = 'flex';
+            title.innerText = gameName;
+            
+            // Reset state
+            bar.style.width = '0%';
+            status.innerText = "Allocating disk space...";
+            btn.style.display = 'none';
+
+            // 2. Simulate Progress
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.random() * 5; // Random increment
+                if (progress > 100) progress = 100;
+                
+                bar.style.width = progress + "%";
+                
+                if (progress < 30) status.innerText = "Downloading files... (1.2 GB / 65 GB)";
+                else if (progress < 70) status.innerText = "Downloading files... (32.5 GB / 65 GB)";
+                else if (progress < 99) status.innerText = "Finalizing installation...";
+                else {
+                    // 3. Complete
+                    clearInterval(interval);
+                    status.innerText = "Installation Complete!";
+                    status.style.color = "#9bf00b";
+                    btn.style.display = "inline-block"; // Show 'Launch' button
+                }
+            }, 100); // Speed of download (lower is faster)
+        }
+
+        function closeDownload() {
+            document.getElementById('downloadOverlay').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>

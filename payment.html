@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoxPass | Secure Checkout</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header style="border-bottom: 1px solid #9bf00b;">
+        <div class="container nav-container" style="justify-content: center;">
+            <div class="logo">
+                <a href="index2.html" style="text-decoration:none; color:white;">
+                    <i class="fa-solid fa-lock" style="color:#9bf00b;"></i> SECURE<span>CHECKOUT</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="checkout-section">
+        <div class="container checkout-container">
+            
+            <div class="order-summary-card">
+                <h2><i class="fa-solid fa-cart-shopping"></i> Order Summary</h2>
+                
+                <div class="summary-item">
+                    <label>Selected Plan</label>
+                    <select id="planSelector" onchange="updateTotal()">
+                        <option value="19.99">Basic Plan (RM 19.99/mo)</option>
+                        <option value="29.99" selected>Ultimate Plan (RM 29.99/mo)</option>
+                    </select>
+                </div>
+
+                <div class="summary-details">
+                    <div class="row">
+                        <span>Subtotal</span>
+                        <span id="subtotal">RM 29.99</span>
+                    </div>
+                    <div class="row">
+                        <span>Tax (6% SST)</span>
+                        <span id="tax">RM 1.80</span>
+                    </div>
+                    <hr>
+                    <div class="row total">
+                        <span>TOTAL</span>
+                        <span id="total">RM 31.79</span>
+                    </div>
+                </div>
+
+                <div class="features-list">
+                    <h4>Includes:</h4>
+                    <ul id="planFeatures">
+                        <li><i class="fa-solid fa-check"></i> 200+ Games</li>
+                        <li><i class="fa-solid fa-check"></i> Day One Releases</li>
+                        <li><i class="fa-solid fa-check"></i> Account Sharing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="payment-details-card">
+                <h2><i class="fa-solid fa-credit-card"></i> Payment Method</h2>
+                
+                <div class="payment-tabs">
+                    <button class="tab-btn active" onclick="selectMethod(this, 'card')">
+                        <i class="fa-regular fa-credit-card"></i> Card
+                    </button>
+                    <button class="tab-btn" onclick="selectMethod(this, 'fpx')">
+                        <i class="fa-solid fa-building-columns"></i> FPX
+                    </button>
+                    <button class="tab-btn" onclick="selectMethod(this, 'paypal')">
+                        <i class="fa-brands fa-paypal"></i> PayPal
+                    </button>
+                </div>
+
+                <form id="paymentForm" onsubmit="processPayment(event)">
+                    <div id="card-fields">
+                        <div class="form-group">
+                            <label>Cardholder Name</label>
+                            <input type="text" placeholder="Tengku Ahmad Danial Bin Tengku Noor Ashraf" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Card Number</label>
+                            <div class="input-wrapper">
+                                <i class="fa-regular fa-credit-card"></i>
+                                <input type="text" placeholder="0000 0000 0000 0000" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label>Expiry Date</label>
+                                <input type="text" placeholder="MM/YY" required>
+                            </div>
+                            <div class="form-group half">
+                                <label>CVV</label>
+                                <input type="text" placeholder="123" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="fpx-fields" class="hidden">
+                        <div class="form-group">
+                            <label>Select Bank</label>
+                            <select>
+                                <option>Maybank2u</option>
+                                <option>CIMB Clicks</option>
+                                <option>Bank Islam</option>
+                                <option>RHB Online</option>
+                                <option>Public Bank</option>
+                            </select>
+                        </div>
+                        <p class="info-text">You will be redirected to your bank's website to complete the secure transaction.</p>
+                    </div>
+
+                    <div id="paypal-fields" class="hidden">
+                        <p class="info-text" style="text-align:center; padding: 20px;">
+                            <i class="fa-brands fa-paypal" style="font-size: 3rem; color: #0070ba; margin-bottom:10px; display:block;"></i>
+                            You will be redirected to PayPal to complete your purchase securely.
+                        </p>
+                    </div>
+
+                    <button type="submit" class="pay-btn">CONFIRM PAYMENT</button>
+                    <p class="secure-note"><i class="fa-solid fa-lock"></i> SSL Encrypted Transaction</p>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 NoxPass by DIZASS Group. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function updateTotal() {
+            const price = parseFloat(document.getElementById('planSelector').value);
+            const tax = price * 0.06;
+            const total = price + tax;
+
+            document.getElementById('subtotal').innerText = "RM " + price.toFixed(2);
+            document.getElementById('tax').innerText = "RM " + tax.toFixed(2);
+            document.getElementById('total').innerText = "RM " + total.toFixed(2);
+
+            // Update features list based on selection
+            const list = document.getElementById('planFeatures');
+            if(price < 25) { // Basic
+                list.innerHTML = `
+                    <li><i class="fa-solid fa-check"></i> 50+ Games</li>
+                    <li><i class="fa-solid fa-check"></i> Download Only</li>
+                    <li><i class="fa-solid fa-xmark" style="color:red"></i> No Account Sharing</li>
+                `;
+            } else { // Ultimate
+                list.innerHTML = `
+                    <li><i class="fa-solid fa-check"></i> 200+ Games</li>
+                    <li><i class="fa-solid fa-check"></i> Day One Releases</li>
+                    <li><i class="fa-solid fa-check"></i> Account Sharing</li>
+                `;
+            }
+        }
+
+        function selectMethod(btn, method) {
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            // Add active class to clicked button
+            btn.classList.add('active');
+
+            // Hide all sections
+            document.getElementById('card-fields').classList.add('hidden');
+            document.getElementById('fpx-fields').classList.add('hidden');
+            document.getElementById('paypal-fields').classList.add('hidden');
+
+            // Show selected section
+            document.getElementById(method + '-fields').classList.remove('hidden');
+        }
+
+        function processPayment(e) {
+            e.preventDefault();
+            const btn = document.querySelector('.pay-btn');
+            const originalText = btn.innerText;
+            
+            btn.innerText = "PROCESSING...";
+            btn.style.opacity = "0.7";
+            
+            setTimeout(() => {
+                alert("Payment Successful! Welcome to NoxPass Premium.");
+                window.location.href = "myprofile.html"; // Redirects to profile
+            }, 2000);
+        }
+    </script>
+
+</body>
+</html>

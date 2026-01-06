@@ -904,3 +904,915 @@ footer {
     border-color: #9bf00b;
     font-weight: bold;
 }
+
+/* --- USER MENU (Logged In Header) --- */
+.user-menu {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+.user-info:hover {
+    color: #9bf00b;
+}
+
+.nav-avatar {
+    font-size: 1.8rem;
+    color: #9bf00b;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #1f1f1f;
+    min-width: 180px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    border: 1px solid #333;
+    border-radius: 6px;
+    z-index: 1001;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: #ccc;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #2a2a2a;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #333;
+    color: #9bf00b;
+    padding-left: 25px; /* Slide effect */
+}
+
+/* Show Dropdown on Hover */
+.dropdown-content.show {
+    display: block;
+}
+
+/* Special color for Sign Out */
+.logout-link:hover {
+    color: #ff4d4d !important; /* Red hover for logout */
+}
+
+/* --- TIER TAG STYLING --- */
+.tier-tag {
+    background-color: #333; /* Dark background */
+    color: #ccc;            /* Light gray text */
+    font-size: 0.7rem;      /* Smaller text */
+    padding: 2px 6px;       /* Spacing inside box */
+    border-radius: 4px;     /* Rounded corners */
+    border: 1px solid #555; /* Subtle border */
+    margin-left: 1px;       /* Space from name */
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    vertical-align: middle;
+}
+
+/* --- CHECKOUT PAGE STYLES --- */
+.checkout-section {
+    padding: 60px 0;
+    min-height: 85vh;
+}
+
+.checkout-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Common Card Style */
+.order-summary-card, .payment-details-card {
+    background-color: #1f1f1f;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #333;
+}
+
+.order-summary-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    height: fit-content;
+}
+
+.payment-details-card {
+    flex: 2;
+    min-width: 350px;
+    max-width: 600px;
+}
+
+h2 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 15px;
+}
+
+h2 i {
+    color: #9bf00b;
+    margin-right: 10px;
+}
+
+/* Summary Details */
+.summary-item select {
+    width: 100%;
+    padding: 10px;
+    background-color: #2a2a2a;
+    color: #fff;
+    border: 1px solid #9bf00b;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.summary-details .row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+.summary-details .total {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #9bf00b;
+    margin-top: 15px;
+}
+
+.features-list {
+    margin-top: 25px;
+    background-color: #252525;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.features-list h4 {
+    color: #888;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.features-list ul {
+    list-style: none;
+}
+
+.features-list li {
+    color: #ddd;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.features-list li i {
+    color: #9bf00b;
+    margin-right: 8px;
+}
+
+/* Payment Tabs */
+.payment-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.payment-tabs .tab-btn {
+    flex: 1;
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.payment-tabs .tab-btn:hover {
+    background-color: #333;
+}
+
+.payment-tabs .tab-btn.active {
+    background-color: #2a2a2a;
+    border-color: #9bf00b;
+    color: #9bf00b;
+}
+
+/* Form Styles */
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.half {
+    flex: 1;
+}
+
+.pay-btn {
+    width: 100%;
+    background-color: #9bf00b;
+    color: #000;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.pay-btn:hover {
+    background-color: #b0ff1a;
+    transform: scale(1.02);
+}
+
+.secure-note {
+    text-align: center;
+    color: #666;
+    font-size: 0.8rem;
+    margin-top: 15px;
+}
+
+.info-text {
+    color: #ccc;
+    background-color: #252525;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 3px solid #9bf00b;
+}
+
+/* --- GLOBAL FORM STYLING (Fixes White Inputs) --- */
+
+/* 1. Reset all form inputs to Dark Mode */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+    background-color: #2a2a2a; /* Dark Grey Background */
+    color: #fff;               /* White Text */
+    border: 1px solid #444;    /* Subtle Dark Border */
+    border-radius: 5px;        /* Rounded Corners */
+    padding: 12px 15px;        /* Comfortable Spacing */
+    font-size: 1rem;
+    width: 100%;               /* Ensure they fill the container */
+    outline: none;             /* Removes the ugly default blue outline */
+    transition: 0.3s;          /* Smooth hover effects */
+}
+
+/* 2. Change color when user clicks (Focus State) */
+input:focus, 
+select:focus, 
+textarea:focus {
+    border-color: #9bf00b;     /* Neon Green Glow */
+    background-color: #333;    /* Slightly lighter grey to show activity */
+    box-shadow: 0 0 8px rgba(155, 240, 11, 0.2); /* Soft green glow */
+}
+
+/* 3. Style the Placeholder Text (The hint text inside) */
+::placeholder {
+    color: #888; /* Dim grey so it doesn't look like typed text */
+    opacity: 1;
+}
+
+/* 4. Fix for the Dropdown Arrow (Select box) */
+select {
+    cursor: pointer;
+    appearance: none; /* Removes default ugly arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%239bf00b%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px top 50%;
+    background-size: 12px auto;
+}
+
+/* --- FIXES FOR PAYMENT PAGE --- */
+
+/* 1. Hides the sections that are not selected (Fixes the PayPal/FPX overlap) */
+.hidden {
+    display: none !important;
+}
+
+/* 2. Fixes the Credit Card Icon Position */
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.input-wrapper i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    pointer-events: none;
+    z-index: 10; 
+}
+
+/* Ensures there is room for the icon so text doesn't overlap */
+.input-wrapper input {
+    padding-left: 45px !important; 
+}
+
+/* Color the icon green when typing */
+.input-wrapper input:focus + i,
+.input-wrapper:focus-within i {
+    color: #9bf00b;
+}
+
+/* --- GAME OVERVIEW PAGE --- */
+
+/* Breadcrumbs & Title */
+.game-header-section {
+    background-color: #161616;
+    padding: 20px 0;
+    border-bottom: 1px solid #333;
+}
+
+.breadcrumbs {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.breadcrumbs a {
+    color: #ccc;
+}
+
+.breadcrumbs a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.game-header-section h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Layout Grid */
+.game-layout {
+    display: flex;
+    gap: 30px;
+    padding-top: 30px;
+    padding-bottom: 60px;
+}
+
+.game-content-left {
+    flex: 2; /* Takes up 66% width */
+}
+
+.game-sidebar {
+    flex: 1; /* Takes up 33% width */
+    min-width: 300px;
+}
+
+/* Media Player Area */
+.media-player {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-color: #000;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.main-media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    color: rgba(255,255,255,0.8);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.media-player:hover .play-overlay {
+    color: #9bf00b;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Screenshot Strip */
+.screenshot-strip {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.ss-item {
+    flex: 1;
+    height: 80px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    background-size: cover;
+}
+
+.ss-item:hover {
+    border-color: #9bf00b;
+}
+
+/* Text Content */
+.about-game h2, .system-reqs h2 {
+    font-size: 1.2rem;
+    color: #fff;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.about-game p {
+    color: #ccc;
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+/* System Requirements */
+.req-grid {
+    display: flex;
+    gap: 20px;
+    font-size: 0.9rem;
+}
+
+.req-col {
+    flex: 1;
+    color: #aaa;
+}
+
+.req-col strong {
+    color: #fff;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.req-col ul {
+    list-style: none;
+}
+
+.req-col li {
+    margin-bottom: 5px;
+}
+
+/* Sidebar Styles */
+.sidebar-cover {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.game-meta-box {
+    background-color: #1f1f1f;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.description-short {
+    color: #ddd;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.meta-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    color: #888;
+}
+
+.meta-row span:last-child {
+    color: #ccc;
+}
+
+/* Action Box (Install/Buy) */
+.action-box {
+    background: linear-gradient(135deg, #2a2a2a, #161616);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.pass-badge {
+    background-color: #9bf00b;
+    color: #000;
+    font-weight: bold;
+    padding: 5px 10px;
+    display: inline-block;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 0.8rem;
+}
+
+.action-box p {
+    color: #ccc;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.install-btn-large {
+    width: 100%;
+    background-color: #9bf00b;
+    color: #000;
+    padding: 15px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.install-btn-large:hover {
+    background-color: #b0ff1a;
+    transform: scale(1.02);
+}
+
+.divider {
+    color: #666;
+    margin: 10px 0;
+    font-size: 0.8rem;
+}
+
+.buy-btn {
+    background: none;
+    border: 1px solid #666;
+    color: #ccc;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.buy-btn:hover {
+    border-color: #fff;
+    color: #fff;
+}
+
+/* Tags Cloud */
+.tags-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.tags-cloud span {
+    background-color: #252525;
+    color: #888;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.tags-cloud span:hover {
+    background-color: #333;
+    color: #9bf00b;
+}
+
+/* --- MY PROFILE DASHBOARD --- */
+
+.profile-section {
+    padding: 60px 0;
+    min-height: 85vh;
+}
+
+.profile-grid {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/* LEFT COLUMN: User Card */
+.user-details {
+    flex: 1;
+    min-width: 300px;
+    background-color: #1f1f1f;
+    padding: 40px 20px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    text-align: center;
+}
+
+.avatar-large {
+    font-size: 5rem;
+    color: #9bf00b;
+    margin-bottom: 20px;
+    background-color: #2a2a2a;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    border: 3px solid #333;
+}
+
+.profile-header h2 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.user-email {
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.member-since {
+    display: inline-block;
+    background-color: #252525;
+    color: #ccc;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-bottom: 30px;
+}
+
+.action-btn {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    background-color: #2a2a2a;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.action-btn:hover {
+    background-color: #333;
+    border-color: #9bf00b;
+    color: #9bf00b;
+}
+
+/* RIGHT COLUMN: Content */
+.profile-content {
+    flex: 2;
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.content-card {
+    background-color: #1f1f1f;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #333;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 15px;
+}
+
+.card-header h3 {
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+.card-header h3 i {
+    color: #9bf00b;
+    margin-right: 10px;
+}
+
+/* Subscription Badge (Ultimate Tag update) */
+.ultimate-tag {
+    background: linear-gradient(45deg, #9bf00b, #6bba05);
+    color: #000;
+    border: none;
+    box-shadow: 0 0 10px rgba(155, 240, 11, 0.3);
+}
+
+.status-badge {
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.status-badge.active {
+    background-color: rgba(155, 240, 11, 0.2);
+    color: #9bf00b;
+    border: 1px solid #9bf00b;
+}
+
+/* Subscription Details */
+.sub-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.plan-info h4 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.plan-info .price {
+    color: #888;
+}
+
+.billing-info p {
+    color: #ccc;
+    margin-bottom: 5px;
+}
+
+.billing-info strong {
+    color: #fff;
+}
+
+.sub-actions button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.manage-btn {
+    background-color: #9bf00b;
+    color: #000;
+    border: none;
+}
+
+.cancel-btn {
+    background: none;
+    border: 1px solid #555;
+    color: #888;
+}
+
+.cancel-btn:hover {
+    color: #ff4d4d;
+    border-color: #ff4d4d;
+}
+
+/* Mini Games Grid */
+.my-games-grid {
+    display: flex;
+    gap: 15px;
+}
+
+.mini-game-card {
+    width: 100px;
+    height: 140px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    background-color: #000;
+    cursor: pointer;
+}
+
+.mini-game-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.mini-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.mini-overlay button {
+    background-color: #9bf00b;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.mini-game-card:hover img {
+    transform: scale(1.1);
+}
+
+.mini-game-card:hover .mini-overlay {
+    opacity: 1;
+}
+
+.add-new {
+    border: 2px dashed #444;
+    background-color: transparent;
+    display: flex;
+}
+
+.add-new a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.add-new:hover {
+    border-color: #9bf00b;
+}
+
+.add-new:hover a {
+    color: #9bf00b;
+}
+
+.submit-btn {
+    background-color: #9bf00b; /* "NoxPass" Neon Green */
+    color: #000;
+    padding: 10px 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+/* --- FIX SEARCH BAR OVERLAP --- */
+.game-search {
+    position: relative; /* Ensures icon stays relative to this box */
+}
+
+.game-search i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    pointer-events: none; /* Allows click to pass through to the input */
+}
+
+.game-search input {
+    /* 45px padding on the left makes room for the icon */
+    padding-left: 45px !important; 
+}

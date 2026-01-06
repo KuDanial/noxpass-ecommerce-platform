@@ -1,6 +1,7 @@
 # 🎮 NoxPass - PC Game Subscription Service
 
-![NoxPass Banner](images/homepage.png)
+![NoxPass Banner](images/login-bg.jpg) 
+*(Note: You can replace the image path above with a screenshot of your homepage later)*
 
 ## 📖 About The Project
 **NoxPass** is a web-based e-commerce platform designed to simulate a digital PC game subscription service (similar to Xbox Game Pass). This project was developed as part of the **ICT552 (E-Commerce Technology)** group assignment at **UiTM Cawangan Kelantan, Kampus Machang**.
@@ -66,7 +67,6 @@ The platform allows users to browse a library of high-quality PC games, choose s
     * *Recommended:* Use "Live Server" extension in VS Code for the best experience.
 
 ---
-![NoxPass Banner](images/passplan.png)
 
 ## 📂 Project Structure
 
@@ -83,5 +83,4 @@ noxpass/
 ├── privacy.html        # Privacy Policy
 ├── terms.html          # Terms & Conditions
 ├── style.css           # Main Stylesheet
-
 └── README.md           # Project Documentation
