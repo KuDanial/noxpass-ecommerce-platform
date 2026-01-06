@@ -1,6 +1,6 @@
 # 🎮 NoxPass - PC Game Subscription Service
 
-![NoxPass Banner](images/login-bg.jpg) 
+![NoxPass Banner](images/homepage.png) 
 *(Note: You can replace the image path above with a screenshot of your homepage later)*
 
 ## 📖 About The Project
@@ -42,7 +42,7 @@ The platform allows users to browse a library of high-quality PC games, choose s
 * **Legal Pages:** Privacy Policy and Terms & Conditions.
 
 ---
-
+![NoxPass Banner](images/gameoverview.png) 
 ## 🛠️ Technologies Used
 
 * **HTML5** - Semantic structure.
@@ -67,7 +67,7 @@ The platform allows users to browse a library of high-quality PC games, choose s
     * *Recommended:* Use "Live Server" extension in VS Code for the best experience.
 
 ---
-
+![NoxPass Banner](images/passplan.png) 
 ## 📂 Project Structure
 
 ```text
@@ -83,4 +83,5 @@ noxpass/
 ├── privacy.html        # Privacy Policy
 ├── terms.html          # Terms & Conditions
 ├── style.css           # Main Stylesheet
+
 └── README.md           # Project Documentation
