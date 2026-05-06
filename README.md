@@ -7,9 +7,9 @@
 
 The platform allows users to browse a library of high-quality PC games, choose subscription plans, and simulate the downloading process.
 
-**Group Name:** DIZASS  
-**Course Code:** ICT552  
-**Session:** Oct 2025 - Feb 2026
+[![Platform](https://img.shields.io/badge/Platform-Web-teal.svg?style=flat-square)](https://github.com/yourusername/TechKeeper)
+[![Languages](https://img.shields.io/badge/Languages-HTML%20%7C%20CSS%20%7C%20JS-blue.svg?style=flat-square)](https://github.com/yourusername/TechKeeper)
+[![License](https://img.shields.io/badge/License-MIT-lightgrey.svg?style=flat-square)](LICENSE)
 
 ---
 
